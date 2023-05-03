@@ -11,12 +11,8 @@ import { ExperienceCard } from '@/components/card/expCard';
 import { ProjectCard } from '@/components/card/projectCard';
 import { DepricatedCard } from '@/components/card/deprCard';
 import { Footer } from '@/components/footer/footer';
-const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const { setTheme } = useNextTheme();
-  const { isDark, type, theme } = useTheme();
-
   return (
     <div className={'w-full h-full'}>
       <Hero
@@ -106,12 +102,6 @@ export default function Home() {
           />
 
         </div>
-
-        The current theme is: {type}
-        <Switch
-          checked={isDark}
-          onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
-        />
       </div>
     </div>
   )

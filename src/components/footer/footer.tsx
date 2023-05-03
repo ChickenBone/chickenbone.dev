@@ -14,16 +14,16 @@ export const Footer = () => {
                     <div className="flex justify-center align-middle mt-2">
                         <Text css={{
                             color: "$accents0"
-                        }} className='font-bold text-2xl lg:text-3xl'>
-                            {"<"}
+                        }} className='font-bold text-2xl lg:text-3xl mr-2'>
+                            {"</"}
                         </Text>
                         <Text className='font-bold text-2xl lg:text-3xl'>
                             {"chickenbone"}
                         </Text>
                         <Text css={{
                             color: "$accents0"
-                        }} className='font-bold text-2xl lg:text-3xl'>
-                            {"/>"}
+                        }} className='font-bold text-2xl lg:text-3xl '>
+                            {">"}
                         </Text>
                     </div>
                     <div className="flex flex-col">

@@ -31,7 +31,7 @@ export default function RootLayout(Props: RootLayoutProps) {
               <div>
                 {Props.children}
               </div>
-              <div className='py-8'>
+              <div className='py-8 mt-24'>
                 <Footer />
               </div>
             </div>

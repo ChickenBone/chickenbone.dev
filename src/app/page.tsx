@@ -20,7 +20,7 @@ export default function Home() {
         position="NodeJS"
       />
       <div>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-24'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
           <TextCard title="about">
             I am a highly motivated and experienced software developer with a proven track record of delivering high-quality software solutions. With proficiency in languages such as ReactJS, TypeScript, and Node.js, I have a strong foundation in both front-end and back-end development.
             <br />

@@ -1,0 +1,12 @@
+{
+    "type": "light",
+    "theme": {
+        "colors": {
+            "accents0": "#137DDE",
+            "background": "rgba(255, 255, 255, 0.4)",
+            "backgroundBlur" : "rgba(255, 255, 255, 0.2)",
+            "blurBox": "rgba(255, 255, 255, 0.4)",
+            "blurHighlight": "rgba(78, 81, 131, 0.4)"
+        }
+    }
+}

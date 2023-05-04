@@ -34,13 +34,13 @@ export const ExperienceCard = (Props: ExperienceCardProps) => {
                         <Image src={Props.image} alt="company" width={'100'} height={100} />
                     </Container>
                     <div className='flex flex-col w-full flex-grow'>
-                        <Text h2 className='mb-0 font-bold'>
+                        <Text size={30} h2 className='mb-0 font-bold'>
                             {Props.position}
                         </Text>
                         <Text h4 className='mb-0 font-normal'>
                             {Props.company}
                         </Text>
-                        <div className='flex justify-between'>
+                        <div className='flex justify-between flex-col md:flex-row'>
                             <Text h4 className='font-normal'>
                                 {Props.level}
                             </Text>

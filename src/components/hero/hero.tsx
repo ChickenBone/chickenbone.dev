@@ -40,7 +40,8 @@ export const Hero = (Props: HeroProps) => {
                     flexDirection: "row",
                     display: "flex",
                     gap: "0.5rem",
-                    color: "$accents0"
+                    color: "$accents0",
+                    minHeight: "100px"
 
                 }}>
                     <Text className={"lg:text-5xl text-4xl"} weight={"bold"} >

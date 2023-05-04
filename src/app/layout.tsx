@@ -20,7 +20,7 @@ export default function RootLayout(Props: RootLayoutProps) {
         <Backdrop>
           <Providers>
 
-            <div className={inter.className + "w-screen h-fit lg:px-24 px-4 py-8"}>
+            <div className={inter.className + "w-screen h-fit lg:px-24 px-4 py-8 bg-transparent"}>
               <div className=' lg:px-24 px-4 py-8'>
                 <Header
                   siteName="chickenbone"

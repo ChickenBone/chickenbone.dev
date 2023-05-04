@@ -14,7 +14,7 @@ export const Hero = (Props: HeroProps) => {
     const { isDark, type, theme } = useTheme();
 
     return (
-        <div className='w-full h-full content-center grid grid-cols-1 md:grid-cols-2 justify-between my-36 items-center text-center'>
+        <div className='w-full h-full content-center grid grid-cols-1 md:grid-cols-2 justify-between md:my-36 my-16 items-center text-center'>
             <div className='w-full justify-center flex'>
                 <Image src={"/profile.png"} alt="profile" className="rounded-full justify-center" width={400} height={400} />
             </div>

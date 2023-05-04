@@ -15,7 +15,7 @@ export const Backdrop = (Props: BackdropProps) => {
             <div className='z-20 bg-none'>
                 {Props.children}
             </div>
-            <div className='overflow-hidden absolute -top-20 -left-20 -z-10 w-screen h-full blur-[200px] grid grid-cols-3 gap-24'>
+            <div className='overflow-hidden absolute -top-20 -left-20 -z-10 w-screen h-full blur-[200px] grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-24'>
                 {
                     Array(12).fill(0).map((_, i) => {
                         return (

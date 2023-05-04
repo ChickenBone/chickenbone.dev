@@ -69,14 +69,27 @@ export default function Home() {
           <ProjectCard
             title='Revvy'
             role='Lead Developer'
-            time='2019 - Present'
+            time='Dec 2020 - Present'
             srcUrl='https://revvy.dev'
           />
+
           <ProjectCard
-            title='Pacakger'
+            title='Evergreen'
             role='NodeJS Developer'
-            time='2019 - Present'
-            srcUrl='https://revvy.dev'
+            time='Jun 2019'
+            srcUrl='/html/mintdev/evergreen/index.html'
+          />
+          <ProjectCard
+            title='Packager'
+            role='Full-Stack Developer'
+            time='Feb 2019'
+            srcUrl='/html/packager/index.html'
+          />
+          <ProjectCard
+            title='Mint'
+            role='Lead Developer'
+            time='Jan 2019'
+            srcUrl='/html/mintdev/index.html'
           />
 
           <div className='col-span-1 md:col-span-2'>
@@ -89,17 +102,12 @@ export default function Home() {
             image='/denartcc.png'
           />
           <DepricatedCard
-            position='Vue Developer'
-            company='Mint Development'
-            date='Jan 2019'
-            image='/mint.png'
-          />
-          <DepricatedCard
             position='NodeJS Developer'
             company='Hermes'
             date='Sept 2020'
             image='/hermes.png'
           />
+
 
         </div>
       </div>

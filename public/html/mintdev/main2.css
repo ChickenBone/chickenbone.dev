@@ -1,0 +1,15 @@
+.grad2{
+    height: 600px;
+    z-index: -10;
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    background-size: 100% 100%;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: rgb(83,117,55);
+    background: linear-gradient(160deg, rgba(83,117,55,1) 14%, rgba(101,212,119,1) 78%);}

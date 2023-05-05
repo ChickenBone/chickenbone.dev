@@ -21,7 +21,7 @@ export const TextCard = (Props: TextCardProps) => {
             </div>
 
             <Container css={{
-                backgroundColor: "$background"
+                backgroundColor: "$blurBox"
             }} className={`w-full h-fit p-6 flex flex-col gap-2 backdrop-blur-2xl min-h-[650px] rounded-[40px]`}>
            
                 <Text h4 className='font-normal'>

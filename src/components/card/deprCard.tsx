@@ -17,12 +17,12 @@ export const DepricatedCard = (Props: DepricatedCardProps) => {
     return (
         <div className='w-full h-fit backdrop-blur-md'>
             <Container css={{
-                backgroundColor: "$background"
+                backgroundColor: "$blurBox"
             }} className={`w-full h-fit p-2 flex backdrop-blur-2xl rounded-[40px]`}>
 
                 <div className='flex w-full gap-6'>
                     <Container css={{
-                        backgroundColor: "$background",
+                        backgroundColor: "$blurHighlight",
                         width: "140px",
                         alignSelf: "center",
                         height: "110px",

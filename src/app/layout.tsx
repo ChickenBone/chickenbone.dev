@@ -4,6 +4,8 @@ import Providers from './providers'
 import { Header } from '@/components/header/header'
 import { Backdrop } from '@/components/backdrop/backdrop'
 import { Footer } from '@/components/footer/footer'
+import { Analytics } from './analytics'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,25 +26,35 @@ export default function RootLayout(Props: RootLayoutProps) {
       <body>
         <Backdrop>
           <Providers>
-
-            <div className={inter.className + "w-screen h-fit lg:px-24 px-4 py-8 bg-transparent"}>
-              <div className=' lg:px-24 px-4 py-8'>
-                <Header
-                  siteName="chickenbone"
-                  githubUrl="https://github.com/chickenbone"
-                  contactUrl="https://chickenbone.dev/contact"
-                />
+              <div className={inter.className + "w-screen h-fit lg:px-24 px-4 py-8 bg-transparent"}>
+                <div className=' lg:px-24 px-4 py-8'>
+                  <Header
+                    siteName="chickenbone"
+                    githubUrl="https://github.com/chickenbone"
+                    contactUrl="https://chickenbone.dev/contact"
+                  />
+                </div>
+                <div>
+                  {Props.children}
+                </div>
+                <div className='py-8 mt-24'>
+                  <Footer />
+                </div>
               </div>
-              <div>
-                {Props.children}
-              </div>
-              <div className='py-8 mt-24'>
-                <Footer />
-              </div>
-            </div>
           </Providers>
         </Backdrop>
       </body>
+      <Script strategy="afterInteractive"
+        src="https://www.googletagmanager.com/gtag/js?id=G-60RDE7YH2R" />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-60RDE7YH2R');
+        `}
+      </Script>
     </html>
   )
 }

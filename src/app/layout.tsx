@@ -1,5 +1,3 @@
-'use client'
-
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Providers from './providers'
@@ -11,6 +9,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 interface RootLayoutProps {
   children: React.ReactNode
+}
+
+export const metadata = {
+  title: 'Wyatt Whorton | chickenbone.dev',
+  description: 'A portfolio website for Wyatt Whorton, a full-stack developer.',
+  url: 'https://chickenbone.dev',
+  image: 'https://chickenbone.dev/profile.png',
 }
 
 export default function RootLayout(Props: RootLayoutProps) {

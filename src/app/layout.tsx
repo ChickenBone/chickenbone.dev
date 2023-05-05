@@ -4,7 +4,6 @@ import Providers from './providers'
 import { Header } from '@/components/header/header'
 import { Backdrop } from '@/components/backdrop/backdrop'
 import { Footer } from '@/components/footer/footer'
-import { Analytics } from './analytics'
 import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'] })

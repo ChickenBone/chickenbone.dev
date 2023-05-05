@@ -1,7 +1,8 @@
 'use client'
 import React from "react";
 import { Container, Text, useTheme } from '@nextui-org/react'
-import { HeaderText } from "../text/headerText";
+import { HeaderText } from "../text/headerText"
+import * as portfolio from "@/data/portfolio.json"
 
 export const Footer = () => {
     return (
@@ -17,7 +18,7 @@ export const Footer = () => {
                             {"</"}
                         </Text>
                         <Text className='font-bold text-2xl lg:text-3xl'>
-                            {"chickenbone"}
+                            {portfolio.siteName}
                         </Text>
                         <Text css={{
                             color: "$accents0"

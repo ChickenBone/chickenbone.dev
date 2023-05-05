@@ -5,6 +5,7 @@ import { Header } from '@/components/header/header'
 import { Backdrop } from '@/components/backdrop/backdrop'
 import { Footer } from '@/components/footer/footer'
 import Script from 'next/script'
+import * as portfolio from '@/data/portfolio.json'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,45 +14,46 @@ interface RootLayoutProps {
 }
 
 export const metadata = {
-  title: 'Wyatt Whorton | chickenbone.dev',
-  description: 'A portfolio website for Wyatt Whorton, a full-stack developer.',
-  url: 'https://chickenbone.dev',
-  image: 'https://chickenbone.dev/profile.png',
+  title: portfolio.ogTitle,
+  description: portfolio.ogDescription,
+  url: portfolio.publicUrl,
+  image: portfolio.profileImage,
 }
 
 export default function RootLayout(Props: RootLayoutProps) {
   return (
     <html lang="en">
       <body>
-        <Backdrop>
-          <Providers>
-              <div className={inter.className + "w-screen h-fit lg:px-24 px-4 py-8 bg-transparent"}>
-                <div className=' lg:px-24 px-4 py-8'>
-                  <Header
-                    siteName="chickenbone"
-                    githubUrl="https://github.com/chickenbone"
-                    contactUrl="https://chickenbone.dev/contact"
-                  />
-                </div>
-                <div>
-                  {Props.children}
-                </div>
-                <div className='py-8 mt-24'>
-                  <Footer />
-                </div>
+        <Providers>
+          <Backdrop>
+
+            <div className={inter.className + "w-screen h-fit lg:px-24 px-4 py-8 bg-transparent"}>
+              <div className=' lg:px-24 px-4 py-8'>
+                <Header
+                  siteName={portfolio.siteName}
+                  githubUrl={portfolio.githubUrl}
+                  contactUrl={portfolio.email}
+                />
               </div>
-          </Providers>
-        </Backdrop>
+              <div>
+                {Props.children}
+              </div>
+              <div className='py-8 mt-24'>
+                <Footer />
+              </div>
+            </div>
+          </Backdrop>
+        </Providers>
       </body>
       <Script strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-60RDE7YH2R" />
+        src={`https://www.googletagmanager.com/gtag/js?id=${portfolio.gtag}`} />
       <Script id="google-analytics" strategy="afterInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'G-60RDE7YH2R');
+          gtag('config', '${portfolio.gtag}');
         `}
       </Script>
     </html>

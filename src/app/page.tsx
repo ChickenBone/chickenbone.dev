@@ -25,12 +25,12 @@ export default function Home() {
         image={portfolio.profileImage}
       />
       <div>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-16'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 place-items-center'>
           <TextCard title="about">
             {portfolio.about}
           </TextCard>
           <div className='flex flex-col gap-6 align-middle justify-center'>
-            <div className='col-span-1 md:col-span-2'>
+            <div className='col-span-1 md:col-span-2 '>
               <HeaderText startOpen endOpen={false}>experience</HeaderText>
             </div>
             {
@@ -48,23 +48,38 @@ export default function Home() {
               })
             }
           </div>
-          <div className='col-span-1 md:col-span-2'>
+          <div className='col-span-1 md:col-span-2 place-self-start'>
             <HeaderText startOpen endOpen={false}>projects</HeaderText>
           </div>
           {
             portfolio.projects.map((project, index) => {
-              return (
-                <ProjectCard
-                  key={index}
-                  title={project.name}
-                  role={project.position}
-                  time={project.time}
-                  srcUrl={project.url}
-                />
-              )
-            })
+              if (index % 2 == 0 && index == portfolio.projects.length - 1) {
+                return (
+                  <div className='col-span-1 md:col-span-2 w-full '>
+                    <ProjectCard
+                      key={index}
+                      title={project.name}
+                      role={project.position}
+                      time={project.time}
+                      srcUrl={project.url}
+                    />
+                  </div>
+                )
+              } else {
+                return (
+                  <div className='col-span-1 w-full'>
+                    <ProjectCard
+                      key={index}
+                      title={project.name}
+                      role={project.position}
+                      time={project.time}
+                      srcUrl={project.url}
+                    />
+                  </div>
+                )}
+              })
           }
-          <div className='col-span-1 md:col-span-2'>
+          <div className='col-span-1 md:col-span-2 place-self-start'>
             <HeaderText startOpen endOpen={false}>depricated</HeaderText>
           </div>
           {

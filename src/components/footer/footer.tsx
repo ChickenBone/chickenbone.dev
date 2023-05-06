@@ -2,7 +2,7 @@
 import React from "react";
 import { Container, Text, useTheme } from '@nextui-org/react'
 import { HeaderText } from "../text/headerText"
-import * as portfolio from "@/data/portfolio.json"
+import portfolio from "@/data/portfolio.json"
 
 export const Footer = () => {
     return (

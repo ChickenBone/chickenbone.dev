@@ -11,7 +11,7 @@ import { ExperienceCard } from '@/components/card/expCard';
 import { ProjectCard } from '@/components/card/projectCard';
 import { DepricatedCard } from '@/components/card/deprCard';
 import { Footer } from '@/components/footer/footer';
-import * as portfolio from '@/data/portfolio.json'
+import portfolio from '@/data/portfolio.json'
 import React from 'react';
 
 

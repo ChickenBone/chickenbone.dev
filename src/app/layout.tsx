@@ -5,7 +5,7 @@ import { Header } from '@/components/header/header'
 import { Backdrop } from '@/components/backdrop/backdrop'
 import { Footer } from '@/components/footer/footer'
 import Script from 'next/script'
-import * as portfolio from '@/data/portfolio.json'
+import portfolio from '@/data/portfolio.json'
 
 const inter = Inter({ subsets: ['latin'] })
 

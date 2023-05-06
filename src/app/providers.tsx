@@ -8,8 +8,8 @@ interface ProvidersProps {
 }
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
-import * as darkJSON from '../themes/dark.json'
-import * as lightJSON from '../themes/light.json'
+import darkJSON from '../themes/dark.json'
+import lightJSON from '../themes/light.json'
 
 
 export default function Providers(Props: ProvidersProps) {

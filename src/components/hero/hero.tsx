@@ -14,7 +14,7 @@ interface HeroProps {
 export const Hero = (Props: HeroProps) => {
 
     return (
-        <div className='w-full h-full content-center grid grid-cols-1 md:grid-cols-2 justify-between md:my-36 my-16 items-center text-center'>
+        <div className='w-full h-full content-center grid grid-cols-1 md:grid-cols-2 gap-16 justify-between md:my-36 my-16 items-center text-center'>
             <div className='w-full justify-center flex'>
                 <Image src={Props.image} alt="profile" className="rounded-full justify-center" width={400} height={400} />
             </div>

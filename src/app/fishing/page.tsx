@@ -1,5 +1,6 @@
 'use client'
 
+import { Dropdown } from '@nextui-org/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
@@ -20,30 +21,65 @@ interface Stocking {
 
 export default function Fishing() {
     const [stocking, setStocking] = useState<Stocking[]>([])
+    const [regionGroup, setRegionGroup] = useState(true)
+    const [monthCount, setMonthCount] = useState(1)
+
 
     useEffect(() => {
         axios.get("https://cpw.crestonedigital.com/fishing/api/v1/stocking").then((data) => {
 
             // Cut out data from not the last month
             let lastMonth = new Date()
-            lastMonth.setMonth(lastMonth.getMonth() - 1)
+            lastMonth.setMonth(lastMonth.getMonth() - monthCount)
             let lastMonthString = lastMonth.toISOString().split('T')[0]
 
             let filteredData = data.data.filter((stock: Stocking) => {
                 return stock.report_date > lastMonthString
             })
+            // Order by region
+            let regionOrdered = filteredData.sort((a: Stocking, b: Stocking) => {
+                if (a.region < b.region) {
+                    return -1
+                }
+                if (a.region > b.region) {
+                    return 1
+                }
+                return 0
+            })
 
-            setStocking(filteredData)
+            if (regionGroup) {
+                setStocking(regionOrdered)
+            } else {
+                setStocking(filteredData)
+            }
         })
-    }, [])
+    }, [monthCount, regionGroup])
 
 
     return (
         <div className={'w-full h-full'}>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 place-items-center'>
-                <div className='col-span-1 md:col-span-2 place-self-start'>
-                    <h1 className='text-4xl font-bold text-center'>Colorado Stocking Report</h1>
+            <div className='col-span-1 md:col-span-2 place-self-start my-24'>
+                <h1 className='text-4xl font-bold text-center'>Colorado Stocking Report</h1>
+                <h2 className='text-2xl font-bold text-center'>Last {monthCount} month(s)</h2>
+                <div className='flex flex-row gap-4 justify-center'>
+                    <input type='range' min='1' max='12' value={monthCount} onChange={(e) => setMonthCount(parseInt(e.target.value))} className={`
+                        w-1/2
+                        bg-gray-300
+                        appearance-none
+                        rounded-full
+                        h-2
+                        outline-none
+                        transition-all
+                        duration-500
+                        ease-in-out
+                        hover:bg-gray-400
+                        focus:bg-gray-400
+                        active:bg-gray-400
+                    `} />
                 </div>
+            </div>
+
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 place-items-center'>
 
                 {
                     stocking.length == 0 && <div className='col-span-1 md:col-span-2 place-self-start'>
@@ -51,7 +87,7 @@ export default function Fishing() {
                     </div>
                 }
                 {
-                    stocking.reverse().map((stock, index) => {
+                    stocking.map((stock, index) => {
                         return (
                             <div className={`col-span-1 w-2/3 h-48 rounded-3xl shadow-lg p-4 bg-opacity-30
                                 ${stock.region == 'northeast' && 'bg-blue-200'}

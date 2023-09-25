@@ -17,7 +17,7 @@ export const Footer = () => {
                         }} className='font-bold text-2xl lg:text-3xl mr-2'>
                             {"</"}
                         </Text>
-                        <Text className='font-bold text-2xl lg:text-3xl'>
+                        <Text className='font-bold text-2xl lg:text-3xl cursor-pointer' onClick={() => window.location.href = "/"}>
                             {portfolio.siteName}
                         </Text>
                         <Text css={{

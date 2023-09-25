@@ -22,7 +22,9 @@ export const Header = (Props: HeaderProps) => {
             }} className='font-bold text-2xl lg:text-3xl'>
                 {"<"}
             </Text>
-            <Text className='font-bold text-2xl lg:text-3xl'>
+            <Text className='font-bold text-2xl lg:text-3xl cursor-pointer' onClick={()=>{
+                window.location.href = "/"
+            }}>
                 {Props.siteName}
             </Text>
             <Text css={{

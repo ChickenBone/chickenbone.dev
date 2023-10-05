@@ -9,10 +9,7 @@ const nextConfig = {
         pathname: '/**',
       },
     ],
-  },
-  experimental: {
-    appDir: true,
-  },
+  }
 }
 
 module.exports = nextConfig

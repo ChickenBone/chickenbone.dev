@@ -33,6 +33,7 @@ export default function RootLayout(Props: RootLayoutProps) {
                   siteName={portfolio.siteName}
                   githubUrl={portfolio.githubUrl}
                   contactUrl={portfolio.email}
+                  linkedinUrl={portfolio.linkedinUrl}
                 />
               </div>
               <div>

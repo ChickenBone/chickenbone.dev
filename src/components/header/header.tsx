@@ -38,7 +38,7 @@ export const Header = (Props: HeaderProps) => {
                 href={Props.linkedinUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-white  rounded-full hover:bg-gray-200/70 mr-6"
+                className="w-10 h-10 md:w-14 md:h-14 flex items-center justify-center bg-white  rounded-full hover:bg-gray-200/70 mr-2 md:mr-6"
             >
                 <Image src='/linkedin.svg' alt='github' className="h-full w-12" width={10} height={10} />
             </a>
@@ -52,7 +52,7 @@ export const Header = (Props: HeaderProps) => {
             </a>
             <button
                 onClick={() => setTheme(isDark ? 'light' : 'dark')}
-                className="w-10 h-10 ml-6 md:w-14 md:h-14 flex items-center justify-center bg-white  rounded-full hover:bg-gray-200/70"
+                className="w-10 h-10 md:ml-6 ml-2 md:w-14 md:h-14 flex items-center justify-center bg-white  rounded-full hover:bg-gray-200/70"
             >
                 {
                     isDark ?

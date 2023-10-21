@@ -10,7 +10,7 @@ export const Circle = (Props: CircleProps) => {
     // bounce off the edges of the screen ensuring the transition is smooth
     const [x, setX] = React.useState(Math.random() * 100)
     const [y, setY] = React.useState(Math.random() * 100)
-    const [speed, setSpeed] = React.useState(Math.random() * 0.5)
+    const [speed, setSpeed] = React.useState(Math.random() * 0.25)
     const [direction, setDirection] = React.useState(Math.random() * 360)
 
     React.useEffect(() => {

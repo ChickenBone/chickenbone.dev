@@ -32,12 +32,13 @@ export default function Fishing() {
             let lastMonth = new Date()
             lastMonth.setMonth(lastMonth.getMonth() - monthCount)
             let lastMonthString = lastMonth.toISOString().split('T')[0]
+            let stockData:Stocking[] = data.data
 
-            let filteredData = data.data.filter((stock: Stocking) => {
+            let filteredData = stockData.filter((stock: Stocking) => {
                 return stock.report_date > lastMonthString
             })
             // Order by region
-            let regionOrdered = filteredData.sort((a: Stocking, b: Stocking) => {
+            let regionOrdered = filteredData.reverse().sort((a: Stocking, b: Stocking) => {
                 if (a.region < b.region) {
                     return -1
                 }
@@ -89,11 +90,11 @@ export default function Fishing() {
                 {
                     stocking.map((stock, index) => {
                         return (
-                            <div className={`col-span-1 w-2/3 h-48 rounded-3xl shadow-lg p-4 bg-opacity-30
-                                ${stock.region == 'northeast' && 'bg-blue-200'}
-                                ${stock.region == 'northwest' && 'bg-green-200'}
-                                ${stock.region == 'southeast' && 'bg-yellow-200'}
-                                ${stock.region == 'southwest' && 'bg-red-200'}
+                            <div key={index} className={`col-span-1 w-2/3 h-48 rounded-3xl shadow-lg p-4 bg-opacity-60
+                                ${stock.region == 'northeast' && 'bg-blue-300'}
+                                ${stock.region == 'northwest' && 'bg-green-300'}
+                                ${stock.region == 'southeast' && 'bg-yellow-300'}
+                                ${stock.region == 'southwest' && 'bg-red-300'}
                                 `}>
                                 <div className='flex flex-col gap-4 align-middle justify-center'>
                                     <div className='col-span-1 md:col-span-2 '>

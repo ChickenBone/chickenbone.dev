@@ -12,7 +12,7 @@ interface BackdropProps {
 export const Backdrop = (Props: BackdropProps) => {
     return (
         <>
-            <div className='overflow-hidden absolute -top-20 -left-20 -z-10 w-screen h-full blur-3xl min-w-full'
+            <div className='overflow-hidden absolute -top-20 -z-10 w-screen h-full blur-3xl'
             style={
                 {
                     transform: "translate3d(0, 0, 0)" // Dirty hack to force the backdrop to render on GPU on Safari

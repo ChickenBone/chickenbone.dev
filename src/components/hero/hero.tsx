@@ -22,7 +22,6 @@ export const Hero = (Props: HeroProps) => {
                 <Container css={{
                     flexDirection: "row",
                     display: "flex",
-                    gap: "0.5rem"
                 }}>
                     <Text className={"lg:text-5xl text-4xl"} weight={"bold"}>
                         Hi there, I'm
@@ -39,7 +38,6 @@ export const Hero = (Props: HeroProps) => {
                 <Container css={{
                     flexDirection: "row",
                     display: "flex",
-                    gap: "0.5rem",
                     color: "$accents0",
                     minHeight: "100px"
 

@@ -22,16 +22,18 @@ export const Hero = (Props: HeroProps) => {
                 <Container css={{
                     flexDirection: "row",
                     display: "flex",
+                    marginLeft: "6px",
+                    marginRight: "6px",
                 }}>
-                    <Text className={"lg:text-5xl text-4xl"} weight={"bold"}>
+                    <Text className={"lg:text-5xl text-4xl m-0"} weight={"bold"}>
                         Hi there, I'm
                     </Text>
-                    <Text className={"lg:text-5xl text-4xl"} css={{
+                    <Text className={"lg:text-5xl text-4xl m-0"} css={{
                         color: "$accents0"
                     }}>
                         {Props.name}
                     </Text>
-                    <Text className={"lg:text-5xl text-4xl"} weight={"bold"}>
+                    <Text className={"lg:text-5xl text-4xl m-0"} weight={"bold"}>
                         ,
                     </Text>
                 </Container>
@@ -39,20 +41,24 @@ export const Hero = (Props: HeroProps) => {
                     flexDirection: "row",
                     display: "flex",
                     color: "$accents0",
-                    minHeight: "100px"
+                    minHeight: "100px",
+                    marginLeft: "6px",
+                    marginRight: "6px",
+
 
                 }}>
-                    <Text className={"lg:text-5xl text-4xl"} weight={"bold"} >
-                        I'm a
+                    <Text className={"lg:text-5xl text-4xl m-0"} weight={"bold"} >
+                        I'm a 
+                        
                     </Text>
                     <TypeAnimation
                         sequence={Props.skills}
                         wrapper="div"
                         cursor={true}
                         repeat={Infinity}
-                        className={`lg:text-5xl text-4xl`}
+                        className={`lg:text-5xl text-4xl m-0`}
                     />
-                    <Text className={"lg:text-5xl text-4xl"} weight={"bold"}>
+                    <Text className={"lg:text-5xl text-4xl m-0"} weight={"bold"}>
                         developer
                     </Text>
                 </Container>

@@ -48,16 +48,15 @@ export const Hero = (Props: HeroProps) => {
 
                 }}>
                     <Text className={"lg:text-5xl text-4xl m-0"} weight={"bold"} >
-                        I'm a 
-                        
+                        I'm a
                     </Text>
-                    <TypeAnimation
-                        sequence={Props.skills}
-                        wrapper="div"
-                        cursor={true}
-                        repeat={Infinity}
-                        className={`lg:text-5xl text-4xl m-0`}
-                    />
+                    <div className={`lg:text-5xl text-4xl mx-2`}>
+                        <TypeAnimation
+                            sequence={Props.skills}
+                            cursor={true}
+                            repeat={Infinity}
+                        />
+                    </div>
                     <Text className={"lg:text-5xl text-4xl m-0"} weight={"bold"}>
                         developer
                     </Text>

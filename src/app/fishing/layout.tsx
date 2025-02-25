@@ -9,7 +9,7 @@ interface RootLayoutProps {
 
 export const metadata = {
   title: "Colorado Fishing Stocking Report | chickenbone.dev",
-  description: "Written in Next.js, Tailwind CSS, and Typescript. Using CPW's API to get the latest stocking reports.",
+  description: "Written in Next.js, Tailwind CSS, and Typescript. Using the new API to get the latest stocking reports.",
   url: portfolio.publicUrl,
   image: portfolio.profileImage,
 }

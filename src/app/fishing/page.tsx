@@ -12,27 +12,51 @@ interface Stocking {
     report_date: string
 }
 
-
-//Example fishing data
-// [{"stocking_id":1,"body_of_water":"Evergreen Lake","water_id":548,"region":"northeast","report_date":"2014-04-29"},{"stocking_id":2,"body_of_water":"Georgetown Lake","water_id":469,"region":"northeast","report_date":"2014-04-29"},{"stocking_id":3,"body_of_water":"Dowdy Lake","water_id":229,"region":"northeast","report_date":"2014-04-22"},{"stocking_id":4,"body_of_water":"West Lake","water_id":463,"region":"northeast","report_date":"2014-04-22"},{"stocking_id":5,"body_of_water":"Blue River (Section 2)","water_id":664,"region":"northeast","report_date":"2014-04-22"},]
-// Get body of water location from water_id
-// 
-
+interface FishingLocation {
+    name: string,
+    coordinates: [number, number]
+}
 
 export default function Fishing() {
     const [stocking, setStocking] = useState<Stocking[]>([])
     const [regionGroup, setRegionGroup] = useState(true)
     const [monthCount, setMonthCount] = useState(1)
-
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState<string | null>(null)
+    const [locations, setLocations] = useState<FishingLocation[]>([])
 
     useEffect(() => {
-        axios.get("https://cpw.crestonedigital.com/fishing/api/v1/stocking").then((data) => {
+        setLoading(true)
+        setError(null)
+        axios.get("https://ndismaps.nrel.colostate.edu/arcgis/rest/services/FishingAtlas/FishingAtlas_Main_Map/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json")
+            .then((response) => {
+                const data = response.data.features.map((feature: any) => ({
+                    name: feature.attributes.WATER_NAME,
+                    coordinates: [feature.geometry.y, feature.geometry.x]
+                }))
+                setLocations(data)
+                setLoading(false)
+            })
+            .catch((error) => {
+                setError("Failed to fetch data from the API")
+                setLoading(false)
+            })
+    }, [])
+
+    useEffect(() => {
+        axios.get("https://ndismaps.nrel.colostate.edu/arcgis/rest/services/FishingAtlas/FishingAtlas_Main_Map/MapServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json").then((data) => {
 
             // Cut out data from not the last month
             let lastMonth = new Date()
             lastMonth.setMonth(lastMonth.getMonth() - monthCount)
             let lastMonthString = lastMonth.toISOString().split('T')[0]
-            let stockData:Stocking[] = data.data
+            let stockData:Stocking[] = data.data.features.map((feature: any) => ({
+                stocking_id: feature.attributes.OBJECTID,
+                body_of_water: feature.attributes.WATER_NAME,
+                water_id: feature.attributes.WATER_ID,
+                region: feature.attributes.REGION,
+                report_date: feature.attributes.STOCK_DATE
+            }))
 
             let filteredData = stockData.filter((stock: Stocking) => {
                 return stock.report_date > lastMonthString
@@ -83,8 +107,13 @@ export default function Fishing() {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 place-items-center'>
 
                 {
-                    stocking.length == 0 && <div className='col-span-1 md:col-span-2 place-self-start'>
+                    loading && <div className='col-span-1 md:col-span-2 place-self-start'>
                         <h1 className='text-4xl font-bold text-center'>Loading...</h1>
+                    </div>
+                }
+                {
+                    error && <div className='col-span-1 md:col-span-2 place-self-start'>
+                        <h1 className='text-4xl font-bold text-center'>{error}</h1>
                     </div>
                 }
                 {
@@ -108,8 +137,21 @@ export default function Fishing() {
                     })
                 }
             </div>
+
+            <div className='col-span-1 md:col-span-2 place-self-start my-24'>
+                <h1 className='text-4xl font-bold text-center'>Fishing Locations</h1>
+                <div className='flex flex-row gap-4 justify-center'>
+                    <div className='w-full h-96'>
+                        <iframe
+                            width="100%"
+                            height="100%"
+                            frameBorder="0"
+                            src={`https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${locations.map(location => location.coordinates.join(',')).join('|')}`}
+                            allowFullScreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
         </div>
-
-
     )
 }

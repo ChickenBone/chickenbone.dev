@@ -3,7 +3,7 @@
     "theme": {
         "colors": {
             "accents0": "#82D2FF",
-            "background": "rgba(3, 23, 47, 0.4)",
+            "background": "rgba(3, 23, 47, 0.1)",
             "backgroundBlur" : "rgba(41, 41, 47, 0.2)",
             "blurBox": "rgba(51, 45, 52, 0.4)",
             "blurHighlight": "rgba(56, 52, 52, 0.4)"

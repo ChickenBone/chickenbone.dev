@@ -16,7 +16,7 @@ interface ExperienceCardProps {
 export const ExperienceCard = (Props: ExperienceCardProps) => {
     const { theme } = useTheme()
     return (
-        <div className='w-full h-fit backdrop-blur-md'>
+        <div className='w-full h-fit'>
 
             <Container css={{
                 backgroundColor: "$blurBox"

@@ -12,10 +12,10 @@ interface projectCardProps {
 
 export const ProjectCard = (Props: projectCardProps) => {
     return (
-        <div className='w-full h-full backdrop-blur-md'>
+        <div className='w-full h-full'>
             <Container css={{
                 backgroundColor: "$blurBox"
-            }} className={`w-full h-fit p-6 flex flex-col gap-2 backdrop-blur-2xl  rounded-[40px]`}>
+            }} className={`w-full h-fit p-6 flex flex-col gap-2  rounded-[40px]`}>
                 <iframe src={Props.srcUrl} className='w-full h-[300px] rounded-3xl' seamless />
                 <div className='py-4'>
                     <Text h2 className='m-0 font-bold'

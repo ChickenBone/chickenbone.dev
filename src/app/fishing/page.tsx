@@ -1,6 +1,6 @@
 'use client'
 
-import { Dropdown } from '@nextui-org/react';
+import { Dropdown } from '@heroui/react';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 

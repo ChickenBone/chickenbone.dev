@@ -1,16 +1,10 @@
 'use client'
-
-import { Inter } from 'next/font/google'
-import { Card, Grid, Text, Button, Row } from "@nextui-org/react";
 import { HeaderText } from '../components/text/headerText'
-import { useTheme as useNextTheme } from 'next-themes'
-import { Switch, useTheme } from '@nextui-org/react'
 import { Hero } from '@/components/hero/hero';
 import { TextCard } from '@/components/card/textCard';
 import { ExperienceCard } from '@/components/card/expCard';
 import { ProjectCard } from '@/components/card/projectCard';
 import { DepricatedCard } from '@/components/card/deprCard';
-import { Footer } from '@/components/footer/footer';
 import portfolio from '@/data/portfolio.json'
 import React from 'react';
 

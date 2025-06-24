@@ -6,7 +6,7 @@ import portfolio from "@/data/portfolio.json"
 
 export const Footer = () => {
     return (
-        <div className='w-full h-full backdrop-blur-md'>
+        <div className='w-full h-full'>
             <Container css={{
                 backgroundColor: "$blurBox"
             }} className={`w-full h-fit p-6 flex gap-2 backdrop-blur-2xl  rounded-[40px]`}>

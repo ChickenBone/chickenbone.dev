@@ -9,20 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroui/react": "^2.7.11",
     "@nextui-org/react": "^1.0.0-beta.12",
     "@types/node": "18.16.3",
     "@types/react": "^18.2.1",
     "@types/react-dom": "^18.2.2",
+    "@types/three": "^0.177.0",
     "autoprefixer": "^10.4.14",
     "axios": "^1.5.0",
+    "glslify-loader": "^2.0.0",
     "next": "^13.2.3",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.23",
+    "raw-loader": "^4.0.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.8.0",
     "react-type-animation": "^3.0.1",
     "tailwindcss": "^3.3.2",
+    "three": "^0.177.0",
     "typescript": "^5.0.4"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }

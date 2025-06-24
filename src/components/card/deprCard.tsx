@@ -15,7 +15,7 @@ interface DepricatedCardProps {
 export const DepricatedCard = (Props: DepricatedCardProps) => {
     const { theme } = useTheme()
     return (
-        <div className='w-full h-fit backdrop-blur-md'>
+        <div className='w-full h-fit'>
             <Container css={{
                 backgroundColor: "$blurBox"
             }} className={`w-full h-fit p-2 flex backdrop-blur-2xl rounded-[40px]`}>

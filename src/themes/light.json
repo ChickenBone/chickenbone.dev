@@ -3,9 +3,9 @@
     "theme": {
         "colors": {
             "accents0": "#137DDE",
-            "background": "rgba(225, 217, 209, 0.4)",
+            "background": "rgba(225, 217, 209, 0)",
             "backgroundBlur" : "rgba(255, 255, 255, 0.2)",
-            "blurBox": "rgba(255, 255, 255, 0)",
+            "blurBox": "rgba(255, 255, 255, 0.4)",
             "blurHighlight": "rgba(205, 197, 189, 0.4)"
         }
     }

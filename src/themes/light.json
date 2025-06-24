@@ -5,7 +5,7 @@
             "accents0": "#137DDE",
             "background": "rgba(225, 217, 209, 0.4)",
             "backgroundBlur" : "rgba(255, 255, 255, 0.2)",
-            "blurBox": "rgba(255, 255, 255, 0.4)",
+            "blurBox": "rgba(255, 255, 255, 0)",
             "blurHighlight": "rgba(205, 197, 189, 0.4)"
         }
     }

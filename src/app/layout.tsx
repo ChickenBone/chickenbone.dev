@@ -7,6 +7,8 @@ import { Footer } from '@/components/footer/footer'
 import Script from 'next/script'
 import portfolio from '@/data/portfolio'
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -104,6 +106,9 @@ export default function RootLayout(Props: RootLayoutProps) {
             </div>
           </Backdrop>
         </Providers>
+        {/* Vercel Analytics and Speed Insights */}
+        <Analytics />
+        <SpeedInsights />
       </body>
       <Script strategy="afterInteractive"
         src={`https://www.googletagmanager.com/gtag/js?id=${portfolio.gtag}`} />

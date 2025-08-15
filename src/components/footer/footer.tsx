@@ -2,7 +2,7 @@
 import React from "react";
 import { Container, Text, useTheme } from '@nextui-org/react'
 import { HeaderText } from "../text/headerText"
-import portfolio from "@/data/portfolio.json"
+import portfolio from "@/data/portfolio"
 
 export const Footer = () => {
     return (
@@ -27,13 +27,13 @@ export const Footer = () => {
                         </Text>
                     </div>
                     <div className="flex flex-col">
-                        <a href="https://github.com/chickenbone" target="_blank">
+                        <a href={portfolio.githubUrl} target="_blank" rel="noopener noreferrer">
                             <Text className='font-bold text-2xl lg:text-3xl'>
                                 View Source
                             </Text>
                         </a>
                         <Text h5 className='m-0'>
-                            Made with ❤️ in Denver, CO
+                            Made with ❤️ in {portfolio.location.city}, {portfolio.location.region}
                         </Text>
                     </div>
                 </div>

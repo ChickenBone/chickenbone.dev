@@ -23,6 +23,7 @@
     "glslify-loader": "^2.0.0",
     "leaflet": "^1.9.4",
     "mapbox-gl": "^3.13.0",
+    "marked": "^16.1.2",
     "next": "^13.2.3",
     "next-themes": "^0.2.1",
     "postcss": "^8.4.23",
@@ -32,6 +33,7 @@
     "react-icons": "^4.8.0",
     "react-leaflet": "^4.2.1",
     "react-type-animation": "^3.0.1",
+    "sanitize-html": "^2.13.0",
     "tailwindcss": "^3.3.2",
     "three": "^0.177.0",
     "typescript": "^5.0.4",
@@ -39,6 +41,7 @@
   },
   "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e",
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "@types/leaflet": "^1.9.20",
     "@types/mapbox-gl": "^3.4.1"
   }

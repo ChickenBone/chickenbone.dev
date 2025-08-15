@@ -8,6 +8,7 @@ import { TypeAnimation } from 'react-type-animation'
 interface HeroProps {
     name: string
     image: string
+    imageAlt: string
     skills: Array<string | number>
 }
 
@@ -16,7 +17,7 @@ export const Hero = (Props: HeroProps) => {
     return (
         <div className='w-full h-full content-center grid grid-cols-1 md:grid-cols-2 gap-16 justify-between md:my-36 my-16 items-center text-center'>
             <div className='w-full justify-center flex'>
-                <Image src={Props.image} alt="profile" className="rounded-full justify-center" width={400} height={400} />
+                <Image src={Props.image} alt={Props.imageAlt} className="rounded-full justify-center" width={400} height={400} priority />
             </div>
             <div className='flex flex-col'>
                 <Container css={{

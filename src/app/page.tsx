@@ -5,18 +5,40 @@ import { TextCard } from '@/components/card/textCard';
 import { ExperienceCard } from '@/components/card/expCard';
 import { ProjectCard } from '@/components/card/projectCard';
 import { DepricatedCard } from '@/components/card/deprCard';
-import portfolio from '@/data/portfolio.json'
+import portfolio from '@/data/portfolio'
 import React from 'react';
+import { Container, Text } from '@nextui-org/react'
 
+function NotePreview({ title, href, excerpt }: { title: string; href: string; excerpt?: string }) {
+  return (
+    <div className='w-full h-fit'>
+      <Container css={{ backgroundColor: "$blurBox" }} className={`w-full h-fit p-6 flex flex-col gap-2 rounded-[40px]`}>
+        <a href={href} className='text-xl font-bold hover:underline'>{title}</a>
+        {excerpt ? <Text className='text-sm opacity-80'>{excerpt}</Text> : null}
+      </Container>
+    </div>
+  )
+}
 
 export default function Home() {
 
+  const [notes, setNotes] = React.useState<{ title: string; href: string; excerpt?: string }[]>([])
+  React.useEffect(() => {
+    fetch('/api/notes').then(r => r.json()).then((d) => {
+      const items = (d.notes || []) as any[]
+      setNotes(items.slice(0, 3))
+    }).catch(() => {})
+  }, [])
+
   return (
     <div className={'w-full h-full'}>
+      {/* SEO: meaningful H1 for name/role, visually hidden to keep design intact */}
+      <h1 className="sr-only">{`${portfolio.fullName} — ${portfolio.jobTitle} in ${portfolio.location.city}, ${portfolio.location.region}`}</h1>
       <Hero
         name={portfolio.name}
         skills={portfolio.skills}
         image={portfolio.profileImage}
+        imageAlt={portfolio.profileImageAlt}
       />
       <div>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-16 place-items-center'>
@@ -73,6 +95,34 @@ export default function Home() {
                 )}
               })
           }
+
+          {/* Notes section */}
+          <div className='col-span-1 md:col-span-2 place-self-start'>
+            <HeaderText startOpen endOpen={false}>notes</HeaderText>
+          </div>
+          {notes.length === 0 ? (
+            <div className='col-span-1 md:col-span-2 w-full'>
+              <div className={`w-full h-fit p-6 rounded-[40px] backdrop-blur-2xl`} style={{ backgroundColor: 'var(--nextui-colors-blurBox)' }}>
+                <p className='opacity-70'>No notes found.</p>
+              </div>
+            </div>
+          ) : (
+            notes.map((n, idx) => (
+              idx % 2 === 0 && idx === notes.length - 1 ? (
+                <div key={n.href} className='col-span-1 md:col-span-2 w-full'>
+                  <NotePreview title={n.title} href={n.href} excerpt={n.excerpt} />
+                </div>
+              ) : (
+                <div key={n.href} className='col-span-1 w-full'>
+                  <NotePreview title={n.title} href={n.href} excerpt={n.excerpt} />
+                </div>
+              )
+            ))
+          )}
+          <div className='col-span-1 md:col-span-2 w-full'>
+            <a href='/notes' className='underline'>View all notes</a>
+          </div>
+
           <div className='col-span-1 md:col-span-2 place-self-start'>
             <HeaderText startOpen endOpen={false}>depricated</HeaderText>
           </div>

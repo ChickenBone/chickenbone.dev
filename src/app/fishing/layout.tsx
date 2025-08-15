@@ -1,5 +1,5 @@
 import { Inter } from 'next/font/google'
-import portfolio from '@/data/portfolio.json'
+import portfolio from '@/data/portfolio'
 
 const inter = Inter({ subsets: ['latin'] })
 

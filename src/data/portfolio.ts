@@ -1,0 +1,129 @@
+
+import type { Portfolio } from "../types/portfolio"
+
+const portfolio: Portfolio = {
+  siteName: "chickenbone",
+  ogDescription: "A portfolio website for Wyatt Whorton, a full-stack developer.",
+  ogTitle: "Wyatt Whorton | chickenbone.dev",
+  publicUrl: "https://chickenbone.dev",
+  profileImage: "https://chickenbone.dev/profile.png",
+  email: "wyatt.whorton.co@gmail.com",
+  githubUrl: "https://github.com/chickenbone",
+  linkedinUrl: "https://www.linkedin.com/in/wyatt-whorton-a81860112/",
+  gtag: "G-60RDE7YH2R",
+  name: "Wyatt",
+  fullName: "Wyatt Whorton",
+  jobTitle: "Full-Stack Developer",
+  location: {
+    city: "Denver",
+    region: "CO",
+    country: "US",
+  },
+  worksFor: {
+    name: "EEL Data Systems",
+  },
+  sameAs: [
+    "https://github.com/chickenbone",
+    "https://www.linkedin.com/in/wyatt-whorton-a81860112/",
+  ],
+  ogImageAlt: "Wyatt Whorton",
+  profileImageAlt: "Portrait of Wyatt Whorton",
+  seo: {
+    locale: "en_US",
+    openGraphType: "website",
+    titleTemplate: "%s | chickenbone.dev",
+  },
+  pages: {
+    home: {
+      title: "Wyatt Whorton | Full-Stack Developer in Denver, CO",
+      description:
+        "Portfolio of Wyatt Whorton, Full-Stack Developer specializing in TypeScript, React, Next.js, and Node.js in Denver, CO.",
+    },
+    weather: {
+      title: "Weather Radar | chickenbone.dev",
+      description: "Interactive NOAA radar viewer with selectable radar products.",
+    },
+    notes_rfm69: {
+      title: "RFM69 Research Notes | chickenbone.dev",
+      description: "Personal notes on RFM69 and Flipper Zero modulation research.",
+    },
+  },
+  skills: [
+    "TypeScript",
+    1000,
+    "ReactJS",
+    1000,
+    "ReactNative",
+    1000,
+    "NestJS",
+    1000,
+    "NextJS",
+    1000,
+    "VueJS",
+    1000,
+    "EDI",
+    1000,
+  ],
+  about:
+    "I am a highly motivated and experienced software developer with a proven track record of delivering high-quality software solutions. With proficiency in languages such as ReactJS, VueJS, TypeScript, and Node.js, I have a strong foundation in both front-end and back-end development.\n\nMy previous positions have allowed me to work collaboratively with large development teams and lead other developers on projects. I am skilled in project management, database administration, and UI/UX design. My attention to detail, persistence, and problem-solving abilities have enabled me to develop software quickly and efficiently.\n\nIn my free time, I enjoy exploring new technologies and staying up-to-date on industry trends. I am passionate about leveraging technology to solve real-world problems and am always eager to take on new challenges.",
+  experience: [
+    {
+      position: "Full-Stack Developer",
+      company: "EEL Data Systems",
+      time: "Nov 2023 - Current",
+      level: "Full-Time",
+      description:
+        "Developing a mobile and Cartage as a service platform, along with a full EDI system for intagration with other systems.",
+      image: "https://chickenbone.dev/cuda.png",
+    },
+    {
+      position: "Solutions Architect",
+      company: "Denver Public Schools",
+      time: "Jul 2019 - Jul 2022",
+      level: "Apprenticeship",
+      description:
+        "Worked on the DPS ICAP application stack, along with SnipeIT and other applications.",
+      image: "https://chickenbone.dev/dps.png",
+    },
+    {
+      position: "Lead Developer",
+      company: "Herd of Zebras",
+      time: "Sept 2022 - Mar 2023",
+      level: "Full-Time",
+      description:
+        "Fully redisgned and redeveloped the Herd of Zebras application stack.",
+      image: "https://chickenbone.dev/hoz.png",
+    },
+    {
+      position: "Software Developer",
+      company: "Whoopeek App",
+      time: "May 2023 - Sept 2023",
+      level: "Part-Time",
+      description:
+        "Worked on the Whoopeek application stack, primarily on the backend.",
+      image: "https://chickenbone.dev/whoopeek.png",
+    },
+    {
+      position: "Code Tutor",
+      company: "Code Ninjas",
+      time: "Jan 2019 - Jul 2019",
+      level: "Part-Time",
+      description:
+        "Taught kids ages 7-14 how to code in Scratch, JavaScript, and C#.",
+      image: "https://chickenbone.dev/code_ninjas.png",
+    },
+  ],
+  projects: [
+    { name: "Revvy", position: "ReactJS Developer", time: "Dec 2020 - Present", url: "https://revvy.dev" },
+    { name: "Evergreen", position: "NodeJS Developer", time: "Jun 2019", url: "/html/mintdev/evergreen/index.html" },
+    { name: "Mint", position: "Full-Stack Developer", time: "Jan 2019", url: "/html/mintdev/index.html" },
+    { name: "Packager", position: "Full-Stack Developer", time: "Feb 2019", url: "/html/packager/index.html" },
+    { name: "Kyuhen", position: "Full-Stack Developer", time: "Mar 2021", url: "https://kyuhen.customprotocol.com/en/" },
+  ],
+  depricatedProjects: [
+    { name: "Denver vARTCC", position: "Laravel Developer", time: "Nov 2018", image: "https://chickenbone.dev/denartcc.png" },
+    { name: "Hermes", position: "NodeJS Developer", time: "Sept 2020", image: "https://chickenbone.dev/hermes.png" },
+  ],
+}
+
+export default portfolio

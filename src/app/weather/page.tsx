@@ -1,8 +1,11 @@
 'use client';
 // Weather Radar Page using Hero UI, NOAA API, and OpenStreetMap
 import React, { useState, useEffect } from 'react';
-import WeatherMap from '@/components/weather/WeatherMap';
+import dynamic from 'next/dynamic';
 import { getRadarProductName } from '@/components/weather/weathermap/radarProductNames';
+
+// Dynamically import the map to disable SSR (avoids window/document on the server)
+const WeatherMapNoSSR = dynamic(() => import('@/components/weather/WeatherMap'), { ssr: false });
 
 interface RadarLayer {
     name: string;
@@ -89,7 +92,7 @@ export default function WeatherPage() {
                     </div>
 
                     <div className="w-full h-[700px] rounded-lg overflow-hidden">
-                        <WeatherMap radarLayer={radarLayer} showLightning={showLightning} />
+                        <WeatherMapNoSSR radarLayer={radarLayer} showLightning={showLightning} />
                     </div>
                 </div>
             </section>

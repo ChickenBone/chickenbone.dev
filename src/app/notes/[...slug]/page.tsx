@@ -62,8 +62,8 @@ export async function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string[] } }): Metadata {
   const raw = getMarkdownBySlug(params.slug)
   const { title: tFromMd, excerpt } = raw ? extractTitleAndExcerpt(raw) : { title: undefined, excerpt: undefined }
-  const title = tFromMd || portfolio.pages.notes_rfm69?.title || `${portfolio.fullName} Notes`
-  const description = excerpt || portfolio.pages.notes_rfm69?.description || portfolio.ogDescription
+  const title = tFromMd || `${portfolio.fullName} Notes`
+  const description = excerpt || portfolio.ogDescription
   return {
     title,
     description,

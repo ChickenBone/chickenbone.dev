@@ -1,21 +1,23 @@
-import { Inter } from 'next/font/google'
 import portfolio from '@/data/portfolio'
 import type { Metadata } from 'next'
 
-const inter = Inter({ subsets: ['latin'] })
 
 interface RootLayoutProps {
   children: React.ReactNode
 }
 
 export const metadata: Metadata = {
-  title: portfolio.pages.notes_rfm69?.title || `${portfolio.fullName} Notes | ${portfolio.siteName}`,
-  description: portfolio.pages.notes_rfm69?.description || portfolio.ogDescription,
-  alternates: { canonical: `${portfolio.publicUrl}/notes` },
+  metadataBase: new URL(portfolio.publicUrl),
+  title: {
+    default: `${portfolio.fullName} Notes`,
+    template: `%s | ${portfolio.siteName}`,
+  },
+  description: portfolio.ogDescription,
+  alternates: { canonical: '/notes' },
   openGraph: {
-    title: portfolio.pages.notes_rfm69?.title || `${portfolio.fullName} Notes` ,
-    description: portfolio.pages.notes_rfm69?.description || portfolio.ogDescription,
-    url: `${portfolio.publicUrl}/notes`,
+    title: `${portfolio.fullName} Notes`,
+    description: portfolio.ogDescription,
+    url: '/notes',
     siteName: portfolio.siteName,
     images: [
       { url: portfolio.profileImage, width: 1200, height: 630, alt: portfolio.ogImageAlt },
@@ -25,8 +27,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: portfolio.pages.notes_rfm69?.title || `${portfolio.fullName} Notes` ,
-    description: portfolio.pages.notes_rfm69?.description || portfolio.ogDescription,
+    title: `${portfolio.fullName} Notes`,
+    description: portfolio.ogDescription,
     images: [portfolio.profileImage],
   },
 }

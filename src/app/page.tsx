@@ -8,13 +8,16 @@ import { DepricatedCard } from '@/components/card/deprCard';
 import portfolio from '@/data/portfolio'
 import React from 'react';
 import { Container, Text } from '@nextui-org/react'
+import Link from 'next/link'
 
 function NotePreview({ title, href, excerpt }: { title: string; href: string; excerpt?: string }) {
   return (
     <div className='w-full h-fit'>
-      <Container css={{ backgroundColor: "$blurBox" }} className={`w-full h-fit p-6 flex flex-col gap-2 rounded-[40px]`}>
-        <a href={href} className='text-xl font-bold hover:underline'>{title}</a>
-        {excerpt ? <Text className='text-sm opacity-80'>{excerpt}</Text> : null}
+      <Container css={{ backgroundColor: "$blurBox" }} className={`group w-full h-fit p-6 flex flex-col gap-2 rounded-[40px]`}>
+        <Link href={href} className='text-xl font-bold text-zinc-900 dark:text-white no-underline group-hover:underline'>
+          {title}
+        </Link>
+        {excerpt ? <Text className='text-sm opacity-80 text-zinc-700 dark:text-zinc-300'>{excerpt}</Text> : null}
       </Container>
     </div>
   )
@@ -120,7 +123,9 @@ export default function Home() {
             ))
           )}
           <div className='col-span-1 md:col-span-2 w-full'>
-            <a href='/notes' className='underline'>View all notes</a>
+            <Link href='/notes' className='inline-flex items-center gap-1 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white underline-offset-4 hover:underline'>
+              View all notes
+            </Link>
           </div>
 
           <div className='col-span-1 md:col-span-2 place-self-start'>

@@ -13,9 +13,17 @@ import Link from 'next/link'
 function NotePreview({ title, href, excerpt }: { title: string; href: string; excerpt?: string }) {
   return (
     <div className='w-full h-fit'>
-      <Container css={{ backgroundColor: "$blurBox" }} className={`group w-full h-fit p-6 flex flex-col gap-2 rounded-[40px]`}>
-        <Link href={href} className='text-xl font-bold text-zinc-900 dark:text-zinc-100 no-underline group-hover:underline'>
-          {title}
+      <Container css={{ backgroundColor: "$blurBox" }} className={`group w-full h-fit p-6 flex flex-col gap-2 rounded-[40px]
+        min-h-[150px] max-h-[150px]
+        `}>
+        <Link href={href}>
+          <Text
+            css={{
+              color: "$accents0"
+            }}
+            className='text-xl font-bold dark:text-zinc-100 no-underline group-hover:underline'>
+            {title}
+          </Text>
         </Link>
         {excerpt ? <Text className='text-sm opacity-80 text-zinc-700 dark:text-zinc-300'>{excerpt}</Text> : null}
       </Container>
@@ -30,7 +38,7 @@ export default function Home() {
     fetch('/api/notes').then(r => r.json()).then((d) => {
       const items = (d.notes || []) as any[]
       setNotes(items.slice(0, 3))
-    }).catch(() => {})
+    }).catch(() => { })
   }, [])
 
   return (
@@ -95,8 +103,9 @@ export default function Home() {
                       srcUrl={project.url}
                     />
                   </div>
-                )}
-              })
+                )
+              }
+            })
           }
 
           {/* Notes section */}
@@ -122,12 +131,6 @@ export default function Home() {
               )
             ))
           )}
-          <div className='col-span-1 md:col-span-2 w-full'>
-            <Link href='/notes' className='inline-flex items-center gap-1 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white underline-offset-4 hover:underline'>
-               View all notes
-             </Link>
-           </div>
-
           <div className='col-span-1 md:col-span-2 place-self-start'>
             <HeaderText startOpen endOpen={false}>depricated</HeaderText>
           </div>

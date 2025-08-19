@@ -1,93 +1,13 @@
----
-Title: Markdown Demo: All Features
-Description: Demonstration of headings, lists, code, tables, images, quotes, and more.
----
+# Tools Index
 
-# Markdown Demo: All Features
+This page serves as a concise index of utility pages and demonstrations contained in the project's /tools directory. Each entry links to a dedicated page with documentation, usage examples, and implementation notes.
 
-This page demonstrates common Markdown elements as rendered on this site. Use the table of contents to jump around.
 
-## Headings
+[Fishing Colorado](/tools/fishing)
+[Weather Map](/tools/weather)
 
-### H3 Subheading
+Usage and contribution
+- Browse the entries below to find tools and examples relevant to your workflow.
+- To add a new tool, create its page under the tools directory and update this index accordingly.
+- Maintain clear documentation and examples on each tool page to aid discoverability and reuse.
 
-#### H4 Sub-subheading
-
-## Text Styles
-
-- Bold: **strong emphasis**
-- Italic: _emphasis_
-- Bold + Italic: **_very important_**
-- Strikethrough: ~~deprecated~~
-- Inline code: `bun add @tailwindcss/typography`
-
-## Lists
-
-- Unordered list item
-  - Nested item
-    - Deeply nested item
-- Another unordered item
-
-1. Ordered list item
-2. Another ordered item
-3. Steps can continue
-
-- [x] Completed task
-- [ ] Pending task
-
-## Links
-
-- External: [GitHub](https://github.com)
-- Internal: [Home](/)
-
-## Images
-
-![Profile image](/profile.png)
-
-## Blockquote
-
-> Tip: You can use blockquotes for callouts or notes.
-
-## Code Blocks
-
-```ts
-function greet(name: string): string {
-  return `Hello, ${name}!`
-}
-console.log(greet('World'))
-```
-
-```json
-{
-  "name": "demo",
-  "features": ["markdown", "toc", "cards"]
-}
-```
-
-```
-$ curl -I https://chickenbone.dev
-HTTP/2 200
-...
-```
-
-## Table
-
-| Feature   | Supported |
-|-----------|-----------|
-| Headings  | Yes       |
-| Lists     | Yes       |
-| Code      | Yes       |
-| Tables    | Yes       |
-| Images    | Yes       |
-
-## Horizontal Rule
-
----
-
-## Mixed Content
-
-Paragraph with a mix of text, `inline code`, a link to [Notes](/notes), and an image above.
-
-### Another Section
-
-Add more H3/H4 headings to populate the ToC and verify anchor links.

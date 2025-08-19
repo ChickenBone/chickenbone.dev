@@ -50,18 +50,6 @@ export const Header = (Props: HeaderProps) => {
             >
                 <Image src='/github.svg' alt='github' className="h-full w-12" width={10} height={10} />
             </a>
-            <button
-                onClick={() => setTheme(isDark ? 'light' : 'dark')}
-                className="w-10 h-10 md:ml-6 ml-2 md:w-14 md:h-14 flex items-center justify-center bg-white  rounded-full hover:bg-gray-200/70"
-            >
-                {
-                    isDark ?
-                        <BsMoonFill className="h-full w-10 text-[#24292F]" />
-                        :
-                        <BsSunFill className="h-full w-10 text-[#fdd835]" />
-                }
-            </button>
-
         </div>
     )
 }

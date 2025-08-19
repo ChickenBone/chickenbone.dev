@@ -23,11 +23,11 @@ export default function Providers(Props: ProvidersProps) {
     return (
         <>
             <NextThemesProvider
-                defaultTheme="system"
+                defaultTheme="light"
                 attribute="class"
                 value={{
                     light: lightTheme.className,
-                    dark: darkTheme.className
+                    // dark: darkTheme.className
                 }}
             >
                 <NextUIProvider>

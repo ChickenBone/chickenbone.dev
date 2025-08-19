@@ -14,7 +14,7 @@ function NotePreview({ title, href, excerpt }: { title: string; href: string; ex
   return (
     <div className='w-full h-fit'>
       <Container css={{ backgroundColor: "$blurBox" }} className={`group w-full h-fit p-6 flex flex-col gap-2 rounded-[40px]`}>
-        <Link href={href} className='text-xl font-bold text-zinc-900 dark:text-white no-underline group-hover:underline'>
+        <Link href={href} className='text-xl font-bold text-zinc-900 dark:text-zinc-100 no-underline group-hover:underline'>
           {title}
         </Link>
         {excerpt ? <Text className='text-sm opacity-80 text-zinc-700 dark:text-zinc-300'>{excerpt}</Text> : null}
@@ -105,8 +105,8 @@ export default function Home() {
           </div>
           {notes.length === 0 ? (
             <div className='col-span-1 md:col-span-2 w-full'>
-              <div className={`w-full h-fit p-6 rounded-[40px] backdrop-blur-2xl`} style={{ backgroundColor: 'var(--nextui-colors-blurBox)' }}>
-                <p className='opacity-70'>No notes found.</p>
+              <div className={`w-full h-fit p-6 rounded-[40px] backdrop-blur-2xl bg-white/70 dark:bg-zinc-900/40 border border-zinc-200/60 dark:border-white/10`}>
+                <p className='opacity-70 text-zinc-800 dark:text-zinc-300'>No notes found.</p>
               </div>
             </div>
           ) : (
@@ -124,9 +124,9 @@ export default function Home() {
           )}
           <div className='col-span-1 md:col-span-2 w-full'>
             <Link href='/notes' className='inline-flex items-center gap-1 text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-zinc-900 dark:hover:text-white underline-offset-4 hover:underline'>
-              View all notes
-            </Link>
-          </div>
+               View all notes
+             </Link>
+           </div>
 
           <div className='col-span-1 md:col-span-2 place-self-start'>
             <HeaderText startOpen endOpen={false}>depricated</HeaderText>

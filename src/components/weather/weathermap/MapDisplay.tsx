@@ -9,22 +9,44 @@ interface MapDisplayProps {
 
 import { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
+import { useTheme as useNextTheme } from 'next-themes';
 
 function BasemapLayer({ mapRef }: { mapRef: React.MutableRefObject<L.Map | null> }) {
     const map = useMap();
+    const { resolvedTheme } = useNextTheme();
+
     useEffect(() => {
         mapRef.current = map;
-        const tileLayer = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+
+        // Choose tile URL according to resolved theme (fallback to light)
+        const themeMode = resolvedTheme || 'light';
+        const tileUrl = themeMode === 'dark'
+            ? 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+            : 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png';
+
+        const tileLayer = L.tileLayer(tileUrl, {
             attribution:
                 '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
             subdomains: 'abcd',
             maxZoom: 19,
         });
+
+        // Attach layer and store reference on the map for potential future updates
         tileLayer.addTo(map);
+        ;(map as any).__basemapLayer = tileLayer;
+
         return () => {
-            map.removeLayer(tileLayer);
+            try {
+                if ((map as any).__basemapLayer && map.hasLayer((map as any).__basemapLayer)) {
+                    map.removeLayer((map as any).__basemapLayer);
+                    (map as any).__basemapLayer = null;
+                }
+            } catch (e) {
+                // ignore cleanup errors
+            }
         };
-    }, [map, mapRef]);
+    }, [map, mapRef, resolvedTheme]);
+
     return null;
 }
 

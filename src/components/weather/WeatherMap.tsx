@@ -66,22 +66,22 @@ export default function WeatherMap({ radarLayer, showLightning }: { radarLayer: 
     };
 
     return (
-        <div className="relative w-full h-full flex flex-col bg-gray-800 rounded-lg shadow-lg">
+        <div className="relative w-full h-full flex flex-col bg-white/70 dark:bg-zinc-900/40 rounded-lg shadow-lg border border-zinc-200/60 dark:border-white/10">
             <MapDisplay mapRef={mapRef} />
-            <div className="absolute top-2 left-2 z-[1000] bg-gray-800 bg-opacity-50 text-white p-2 rounded-md shadow-lg">
+            <div className="absolute top-2 left-2 z-[1000] bg-white/70 dark:bg-zinc-800/60 text-zinc-900 dark:text-white p-2 rounded-md shadow-lg border border-zinc-200/60 dark:border-white/10">
                 {isLoading ? (
                     <div className="flex items-center">
                         <svg className="animate-spin h-5 w-5 mr-3 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                             <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                             <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4zm16 0a8 8 0 01-8 8v-8h8z"></path>
                         </svg>
-                        Loading...
+                        <span className="text-zinc-900 dark:text-white">Loading...</span>
                     </div>
                 ) : (
                     <div className="flex items-center space-x-2">
                         <button
                             onClick={handlePlayPause}
-                            className="p-2 rounded-md bg-gray-700 hover:bg-gray-600 focus:outline-none"
+                            className="p-2 rounded-md bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 focus:outline-none"
                             disabled={isLoading}
                         >
                             {isPlaying ? (

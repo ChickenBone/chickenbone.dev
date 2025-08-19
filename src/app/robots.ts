@@ -5,7 +5,7 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/api'],
+      disallow: ['/api', '/api/spotify', '/spotify'],
     },
     sitemap: `${portfolio.publicUrl}/sitemap.xml`,
     host: portfolio.publicUrl,

@@ -24,7 +24,9 @@ function listNotePaths(): string[] {
 }
 
 export default async function sitemap() {
-  const staticPaths = staticRoutes.map((p) => ({ url: `${portfolio.publicUrl}${p}` }))
+  const staticPaths = staticRoutes
+    .filter((p) => !p.startsWith('/spotify'))
+    .map((p) => ({ url: `${portfolio.publicUrl}${p}` }))
   const notePaths = listNotePaths().map((p) => ({ url: `${portfolio.publicUrl}${p}` }))
   return [...staticPaths, ...notePaths]
 }

@@ -20,7 +20,7 @@ export function PlaybackControls({
 }: PlaybackControlsProps) {
   if (timestamps.length === 0 || currentTimeIndex === null) return null;
   return (
-    <div className="p-4 bg-gray-900/80 backdrop-blur-sm rounded-b-lg text-white">
+    <div className="p-4 bg-white/70 dark:bg-zinc-900/60 backdrop-blur-sm rounded-b-lg text-zinc-900 dark:text-white border border-zinc-200/60 dark:border-white/10">
       {/* <div className="flex items-center justify-between mb-2">
         <button
           onClick={onPlayPause}
@@ -41,7 +41,7 @@ export function PlaybackControls({
         value={currentTimeIndex}
         onChange={onSliderChange}
         disabled={isLoading}
-        className="w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:bg-white [&::-moz-range-thumb]:bg-white"
+        className="w-full h-2 bg-gray-300 dark:bg-zinc-700 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:bg-white [&::-moz-range-thumb]:bg-white"
       />
     </div>
   );
